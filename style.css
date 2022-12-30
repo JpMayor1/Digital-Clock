@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: rgb(49, 48, 48);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper {
+    height: 99vh;
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    background-image: url(/img/images.jpeg);
+    z-index: -3;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.datetime {
+    animation: glow 0.50s ease-in-out infinite alternate-reverse;
+    padding: 1rem;
+    font-family: "Segoe UI", sans-serif;
+    color: #89c4e1;
+    height: auto;
+    width: auto;
+    position: relative;
+    bottom: -22%;
+    left: -22%;
+    background: linear-gradient(0deg, black, rgb(32, 31, 31));
+}
+
+.glow::before, .glow::after{
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(45deg, #e6fb84, #ff6600, #00ff66, #00ffff, #ff00ff, #ff0099, #6e0dd0, #ff3300, #099fff);
+    background-size: 400%;
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    z-index: -1;
+    animation: animate 20s linear infinite;
+}
+
+@keyframes animate{
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.glow::after {
+    filter: blur(10px);
+}
+
+.date {
+    cursor: default;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+.time {
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+}
+.time span:not(:last-child) {
+    position: relative;
+    margin: 0 6px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 3px;
+    cursor: default;
+}
+.time span:last-child {
+    background: transparent;
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 10px;
+    padding: 0 5px;
+    border-radius: 3px;
+    cursor: default;
+}
+
+#dayname,
+#month,
+#daynum,
+#year,
+#hour,
+#minutes,
+#seconds,
+#period {
+    color: #fff;
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff,
+        0 0 42px rgb(0, 183, 255), 0 0 82px rgb(0, 183, 255),
+        0 0 92px rgb(0, 183, 255), 0 0 102px rgb(0, 183, 255),
+        0 0 151px rgb(0, 183, 255);
+}
+
+span {
+    animation: glow 0.50s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes glow {
+    100% {
+        text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff,
+            0 0 40px rgb(0, 183, 255), 0 0 80px rgb(0, 183, 255),
+            0 0 90px rgb(0, 183, 255), 0 0 100px rgb(0, 183, 255),
+            0 0 150px rgb(0, 183, 255);
+    }
+    0%{
+        text-shadow: 
+    0 0 4px #fff,
+    0 0 10px #fff,
+    0 0 18px #fff,
+    0 0 38px rgb(0, 183, 255),
+    0 0 73px rgb(0, 183, 255),
+    0 0 80px rgb(0, 183, 255),
+    0 0 94px rgb(0, 183, 255),
+    0 0 140px rgb(0, 183, 255),
+    ;
+    }
+}
+
+.img {
+    height: 100vh;
+    width: 30vw;
+    position: absolute;
+    right: 11%;
+    bottom: 0;
+    cursor: default;
+}
+
+.img img {
+    height: 87%;
+    width: auto;
+    cursor: default;
+    position: absolute;
+    bottom: 0;
+}
