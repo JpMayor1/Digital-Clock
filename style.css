@@ -3,47 +3,103 @@
     padding: 0;
     box-sizing: border-box;
 }
-body {
-    background: rgb(49, 48, 48);
+#animated-background {
+    position: absolute;
+    background: #121212;
     height: 100vh;
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .wrapper {
     height: 99vh;
-    width: 70%;
+    width: 50%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    position: relative;
+    position: absolute;
+    left: 25%;
+    background-color: rgb(0, 0, 136);
     background-image: url(/img/images.jpeg);
-    z-index: -3;
+    z-index: 1;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
+.txt-wrapper {
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    display: flex;
+}
+
+.txt-wrapper .static-txt {
+    color: white;
+    font-size: 60px;
+    font-weight: 400px;
+}
+
+.txt-wrapper .dynamic-txt {
+    height: 80px;
+    margin-left: 1rem;
+    line-height: 80px;
+    overflow: hidden;
+}
+
+.txt-wrapper .dynamic-txt li {
+    color: #660101;
+    list-style: none;
+    font-size: 40px;
+    font-weight: 500px;
+    position: relative;
+    top: 0;
+    animation: slide 5s steps(3) infinite;
+}
+
+@keyframes slide {
+    100% {
+        top: -240px;
+    }
+}
+
+.dynamic-txt li p {
+    position: relative;
+}
+
 .datetime {
-    animation: glow 0.50s ease-in-out infinite alternate-reverse;
+    animation: glow 0.5s ease-in-out infinite alternate-reverse;
     padding: 1rem;
     font-family: "Segoe UI", sans-serif;
     color: #89c4e1;
     height: auto;
     width: auto;
     position: relative;
-    bottom: -22%;
-    left: -22%;
+    bottom: -26%;
+    left: -24%;
     background: linear-gradient(0deg, black, rgb(32, 31, 31));
 }
 
-.glow::before, .glow::after{
-    content: '';
+.glow::before,
+.glow::after {
+    content: "";
     position: absolute;
     left: -2px;
     top: -2px;
-    background: linear-gradient(45deg, #e6fb84, #ff6600, #00ff66, #00ffff, #ff00ff, #ff0099, #6e0dd0, #ff3300, #099fff);
+    background: linear-gradient(
+        45deg,
+        #e6fb84,
+        #ff6600,
+        #00ff66,
+        #00ffff,
+        #ff00ff,
+        #ff0099,
+        #6e0dd0,
+        #ff3300,
+        #099fff
+    );
     background-size: 400%;
     width: calc(100% + 5px);
     height: calc(100% + 5px);
@@ -51,7 +107,7 @@ body {
     animation: animate 20s linear infinite;
 }
 
-@keyframes animate{
+@keyframes animate {
     0% {
         background-position: 0 0;
     }
@@ -69,14 +125,14 @@ body {
 
 .date {
     cursor: default;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 400;
     text-align: center;
     letter-spacing: 3px;
 }
 
 .time {
-    font-size: 60px;
+    font-size: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -117,7 +173,7 @@ body {
 }
 
 span {
-    animation: glow 0.50s ease-in-out infinite alternate-reverse;
+    animation: glow 0.5s ease-in-out infinite alternate-reverse;
 }
 
 @keyframes glow {
@@ -127,17 +183,11 @@ span {
             0 0 90px rgb(0, 183, 255), 0 0 100px rgb(0, 183, 255),
             0 0 150px rgb(0, 183, 255);
     }
-    0%{
-        text-shadow: 
-    0 0 4px #fff,
-    0 0 10px #fff,
-    0 0 18px #fff,
-    0 0 38px rgb(0, 183, 255),
-    0 0 73px rgb(0, 183, 255),
-    0 0 80px rgb(0, 183, 255),
-    0 0 94px rgb(0, 183, 255),
-    0 0 140px rgb(0, 183, 255),
-    ;
+    0% {
+        text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px #fff,
+            0 0 38px rgb(0, 183, 255), 0 0 73px rgb(0, 183, 255),
+            0 0 80px rgb(0, 183, 255), 0 0 94px rgb(0, 183, 255),
+            0 0 140px rgb(0, 183, 255);
     }
 }
 
@@ -145,15 +195,17 @@ span {
     height: 100vh;
     width: 30vw;
     position: absolute;
-    right: 11%;
+    right: 0;
     bottom: 0;
     cursor: default;
 }
 
 .img img {
-    height: 87%;
+    height: 85%;
     width: auto;
     cursor: default;
     position: absolute;
     bottom: 0;
+    right: 0;
+    z-index: 2;
 }
