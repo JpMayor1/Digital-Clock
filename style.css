@@ -66,8 +66,13 @@
     }
 }
 
+.static-txt {
+    cursor: default;
+}
+
 .dynamic-txt li p {
     position: relative;
+    cursor: default;
 }
 
 .datetime {
@@ -180,15 +185,11 @@ span {
 @keyframes glow {
     100% {
         text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff,
-            0 0 40px rgb(0, 183, 255), 0 0 80px rgb(0, 183, 255),
-            0 0 90px rgb(0, 183, 255), 0 0 100px rgb(0, 183, 255),
-            0 0 150px rgb(0, 183, 255);
+            0 0 40px rgb(0, 183, 255), 0 0 80px rgb(0, 183, 255);
     }
     0% {
-        text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px #fff,
-            0 0 38px rgb(0, 183, 255), 0 0 73px rgb(0, 183, 255),
-            0 0 80px rgb(0, 183, 255), 0 0 94px rgb(0, 183, 255),
-            0 0 140px rgb(0, 183, 255);
+        text-shadow: 0 0 4px #fff,
+            0 0 38px rgb(0, 183, 255);
     }
 }
 

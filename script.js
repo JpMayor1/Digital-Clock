@@ -1,3 +1,5 @@
+
+//////////////////////////////// CLOCK CODE
 function updateClock() {
     var now = new Date();
     var dname = now.getDay();
@@ -73,6 +75,8 @@ function initClock() {
     updateClock();
     window.setInterval("updateClock()", 1);
 }
+
+//////////////////////////////// PARTICLES CODE
 
 particlesJS("animated-background", {
     particles: {
