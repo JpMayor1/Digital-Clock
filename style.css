@@ -21,7 +21,7 @@
     justify-content: space-evenly;
     align-items: center;
     background-color: rgb(0, 0, 136);
-    background-image: url(/img/images.jpeg);
+    background-image: url(img/images.jpeg);
     z-index: 1;
     background-position: center;
     background-size: cover;
@@ -236,3 +236,7 @@ span {
         font-size: 13px;
     }
 }
+
+/* @media screen and (max-width: 350px) {
+  
+} */
