@@ -5,7 +5,6 @@
     scroll-behavior: smooth;
 }
 #animated-background {
-    position: absolute;
     background: #121212;
     height: 100vh;
     width: 100vw;
@@ -15,13 +14,12 @@
 }
 
 .wrapper {
-    height: 99vh;
-    width: 50%;
+    height: 100vh;
+    width: 650px;
+    position: relative;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    position: absolute;
-    left: 25%;
     background-color: rgb(0, 0, 136);
     background-image: url(/img/images.jpeg);
     z-index: 1;
@@ -51,7 +49,7 @@
 }
 
 .txt-wrapper .dynamic-txt li {
-    color: #660101;
+    color: #000000;
     list-style: none;
     font-size: 40px;
     font-weight: 500px;
@@ -152,16 +150,6 @@
     letter-spacing: 3px;
     cursor: default;
 }
-.time span:last-child {
-    background: transparent;
-    font-size: 30px;
-    font-weight: 600;
-    text-transform: uppercase;
-    margin-top: 10px;
-    padding: 0 5px;
-    border-radius: 3px;
-    cursor: default;
-}
 
 #dayname,
 #month,
@@ -188,8 +176,7 @@ span {
             0 0 40px rgb(0, 183, 255), 0 0 80px rgb(0, 183, 255);
     }
     0% {
-        text-shadow: 0 0 4px #fff,
-            0 0 38px rgb(0, 183, 255);
+        text-shadow: 0 0 4px #fff, 0 0 38px rgb(0, 183, 255);
     }
 }
 
@@ -210,4 +197,42 @@ span {
     bottom: 0;
     right: 0;
     z-index: 2;
+}
+@media screen and (max-width: 3000px) {
+    .wrapper {
+        width: 900px;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    .wrapper {
+        width: 100%;
+    }
+    .img {
+        height: 90vh;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .img {
+        height: 80vh;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .img {
+        height: 70vh;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .datetime {
+        left: -22%;
+    }
+    .date {
+        font-size: 10px;
+    }
+    .time {
+        font-size: 13px;
+    }
 }
